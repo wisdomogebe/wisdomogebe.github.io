@@ -50,7 +50,24 @@
     footer { text-align:center; font-size:0.9rem; color:#555; padding:50px 20px; background:#fff; margin-top:50px; }
     footer a { margin:0 5px; font-weight:500; color:#0070f3; }
 
-    @media(max-width:768px){ header h1{font-size:2rem;} header h2{font-size:1.2rem;} h2.section-title{font-size:2rem;} }
+    @media(max-width:768px){ 
+      header h1 { font-size:2rem; }
+      header h2 { font-size:1.2rem; }
+      h2.section-title { font-size:2rem; }
+
+      /* Mobile nav: split into two rows */
+      nav {
+        flex-wrap: wrap;        /* allow nav items to wrap into multiple rows */
+        justify-content: center; /* center the links */
+        gap: 10px;              /* space between links */
+      }
+
+      nav a {
+        flex: 1 1 30%;          /* each link takes ~30% of nav width */
+        text-align: center;
+        margin-bottom: 10px;    /* spacing between rows */
+      }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -67,6 +84,7 @@
 <body>
 
   <nav>
+    <a href="#home">Home</a>
     <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
@@ -74,7 +92,7 @@
     <a href="#contact">Connect</a>
   </nav>
 
-  <header>
+  <header id="home">
     <img style="margin-top: 4px;" src="WisdomOgebe.jpg" alt="Wisdom Ogebe" class="hero-headshot">
     <h1><strong>Wisdom Ogebe</strong></h1>
     <h2>From APIs and dashboards to e-commerce platforms, I make products reliable, scalable, and smooth behind the scenes. I also explore AI and ML to enhance intelligent systems.</h2>
